@@ -22,6 +22,8 @@ type Entry struct {
 // NewSchedule constructs a Schedule from the set of Entries provided. The Entries are converted to
 // throttled.RateQuota structs with burst values calculated to allow the previous rate in the
 // Schedule to be maximally sustained during the delay.
+//
+// TODO: ensure entries are ordered from most to least permissive
 func NewSchedule(burst int, entries ...Entry) *Schedule {
 	previousBurst := burst
 	var previousPeriod time.Duration
