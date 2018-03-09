@@ -1,4 +1,4 @@
-# Throttled-Valve
+# Throttled-Valve [![GoDoc](https://godoc.org/github.com/keratin/throttled-valve/valve?status.svg)](https://godoc.org/github.com/keratin/throttled-valve/valve)
 
 Extends [throttled/throttled](https://github.com/throttled/throttled) with a new RateLimiter that
 can decrease the allowed rate of clients sustaining too much traffic for too long.
