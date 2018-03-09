@@ -36,11 +36,11 @@ func TestRateLimit(t *testing.T) {
 	assert.Equal(t, time.Duration(-1), result.RetryAfter)
 
 	// hit the first limit
-	// limited, result, err = v.RateLimit("foo", 1)
-	// require.NoError(t, err)
-	// assert.True(t, limited)
-	// assert.Equal(t, 5, result.Limit)
-	// assert.Equal(t, 15*time.Second, result.RetryAfter)
+	limited, result, err = v.RateLimit("foo", 1)
+	require.NoError(t, err)
+	assert.True(t, limited)
+	assert.Equal(t, 5, result.Limit)
+	assert.Equal(t, 15*time.Second, result.RetryAfter)
 
 	// t=15-29.99
 	store.clock = store.clock.Add(15 * time.Second)
