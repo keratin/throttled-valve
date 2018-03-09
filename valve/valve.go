@@ -16,13 +16,13 @@ type Valve struct {
 }
 
 // NewValve builds a Valve from a Schedule
-func NewValve(store throttled.Store, schedule *Schedule) Valve {
+func NewValve(store throttled.Store, schedule *Schedule) *Valve {
 	var limiters []*throttled.GCRARateLimiter
 	for _, r := range schedule.Rates {
 		limiter, _ := throttled.NewGCRARateLimiter(store, *r)
 		limiters = append(limiters, limiter)
 	}
-	return Valve{limiters}
+	return &Valve{limiters}
 }
 
 // RateLimit will return true (valve is limited) if any of its limiters are limited. The

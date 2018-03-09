@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/keratin/throttled/valve"
+	"github.com/keratin/throttled-valve/valve"
 	"github.com/stretchr/testify/assert"
 	"github.com/throttled/throttled"
 )
