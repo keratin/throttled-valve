@@ -10,7 +10,6 @@ import (
 	"github.com/throttled/throttled/store/memstore"
 )
 
-// NOTE: keep in sync with README.md
 func Example() {
 	store, err := memstore.New(65536)
 	if err != nil {
